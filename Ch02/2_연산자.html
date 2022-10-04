@@ -6,98 +6,71 @@
     <title>2_연산자</title>
 </head>
 <body>
-    <h3>연산자</h3>
-
-    <h4>산술연산자</h4>
+    <h3>조건문</h3>
     <script>
+        // if
         let num1 = 1;
         let num2 = 2;
-        let num3 = 3; num4 = 4;
 
-        let rs1 = num1 + num2
-        let rs2 = num1 - num2
-        let rs3 = num1 * num2
-        let rs4 = num1 / num2
-        let rs5 = num1 % num2
+        if(num1 > 0){
+            document.write('num1은 0보다 크다.<br/>');
+        }
 
-        document.write('rs1 : ' + rs1 + '<br/>');
-        document.write('rs2 : ' + rs2 + '<br/>');
-        document.write('rs3 : ' + rs3 + '<br/>');
-        document.write('rs4 : ' + rs4 + '<br/>');
-        document.write('rs5 : ' + rs5 + '<br/>');
+        if(num1 > 0){
+            if(num2 > 1){
+                document.write('num1은 0보다 크고 num2는 1보다 크다.<br/>');
+            }
+        }
 
-    </script>
-    <h4>복합대입연산자</h4>
-    <script>
-        let var1 = 1;
-        let var2 = 2;
-        let var3 = 3;
-        let var4 = 4;
+        if(num1 > 0 && num2 > 1){
+            document.write('num1은 0보다 크고 num2는 1보다 크다.<br/>');
+        }
 
-        var1 += 1;
-        var2 -= 2;
-        var3 *= 3;
-        var4 /= 4;
+        // if ~ else
+        let num3 = 3;
+        let num4 = 4;
 
-        document.write('var1 : ' + var1 + '<br/>');
-        document.write('var2 : ' + var2 + '<br/>');
-        document.write('var3 : ' + var3 + '<br/>');
-        document.write('var4 : ' + var4 + '<br/>');
-    </script>
+        if(num3 > num4){
+            document.write('num3은 num4보다 크다.<br/>');
+        }else {
+            document.write('num3은 num4보다 작다.<br/>');
+        }
 
+        // if ~ else if ~ else
+        if(num1 > num2){
+            document.write('num1은 num2보다 크다.<br/>');
+        }else if(num2 > num3){
+            document.write('num2은 num3보다 크다.<br/>');
+        }else if(num3 > num4){
+            document.write('num3은 num4보다 크다.<br/>');
+        }else{
+            document.write('num4가 가장 크다.<br/>');
+        }
 
-    <h4>비교연산자</h4>
-    <script>
-        let n1 = 1; n2 = 2, n3 = 3, n4 = 4;
+        // switch
+        let score = prompt('점수 입력');
+        document.write('입력한 점수 : ' + score + '<br/>');
 
-        let r1 = n1 > n2;
-        let r2 = n1 < n2;
-        let r3 = n2 >= n2;
-        let r4 = n2 <= n2;
-        let r5 = n3 == n2;
-        let r6 = n3 != n2;
-
-        document.write('r1 : ' + r1 + '<br/>');
-        document.write('r2 : ' + r2 + '<br/>');
-        document.write('r3 : ' + r3 + '<br/>');
-        document.write('r4 : ' + r4 + '<br/>');
-        document.write('r5 : ' + r5 + '<br/>');
-        document.write('r6 : ' + r6 + '<br/>');
-    </script>
-
-    <h4>논리연산자</h4>
-    <script>
-        let res1 = n1 > 1 && n2 > 2;
-        let res2 = n1 < 2 && n2 < 3;
-        let res3 = n1 >= 1 || n2 >= 1;
-        let res4 = n1 > 3 || n2=3 >= 2;
-        let res5 = !(n3 > n4);
-     
-        document.write('<ul>');
-        document.write('<li>res1 : '+res1+ '</li>');
-        document.write('<li>res2 : '+res2+ '</li>');
-        document.write('<li>res3 : '+res3+ '</li>');
-        document.write('<li>res4 : '+res4+ '</li>');
-        document.write('<li>res5 : '+res5+ '</li>');
-        document.write('</ul>');
-       
-
-    </script>
-    <h4>일치연산자</h4>
-    <script>
-
-        let result1 = (10 == '10');
-        let result2 = (10 === '10');
-        let result3 = (0 == '');
-        let result4 = (0 === '');
-
-        document.write('result1 : ' + result1 + '<br/r>');
-        document.write('result2 : ' + result2 + '<br/r>');
-        document.write('result3 : ' + result3 + '<br/r>');
-        document.write('result4 : ' + result4 + '<br/r>');
-
-
-    </script>
-  
+        let result = parseInt(score / 10);
+        
+        switch(result){
+            case 10:
+            case 9:
+                document.write('A 입니다.');
+                break;
+            case 8:
+                document.write('B 입니다.');
+                break;
+            case 7:
+                document.write('C 입니다.');
+                break;
+            case 6:
+                document.write('D 입니다.');
+                break;
+            default:
+                document.write('F 입니다.');
+                break;
+        }
+    </script>    
 </body>
 </html>
